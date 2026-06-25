@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <!-- Collapsed View (The bubble) -->
+    <FrameLayout
+        android:id="@+id/collapsed_view"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@drawable/floating_bubble_bg"
+        android:elevation="8dp"
+        android:visibility="visible">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:src="@android:drawable/ic_menu_search"
+            android:contentDescription="Drag magnifier over text" />
+    </FrameLayout>
+
+    <!-- Expanded View (The Suggestion Card) -->
+    <LinearLayout
+        android:id="@+id/expanded_view"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/floating_card_bg"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="gone">
+
+        <!-- Title / Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp">
+            
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+                
+                <!-- Tiny Purple Star/Sparkle Icon replacement using simple shapes or styled text -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="✦"
+                    android:textColor="#6750a4"
+                    android:textSize="18sp"
+                    android:layout_marginEnd="6dp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="AI MEDIATOR"
+                    android:textStyle="bold"
+                    android:textColor="#6750a4"
+                    android:textSize="14sp"
+                    android:letterSpacing="0.05"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/close_btn"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentEnd="true"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:tint="#1D192B"
+                android:contentDescription="Close suggestion card"/>
+        </RelativeLayout>
+
+        <!-- Context Extracted Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CONTEXT EXTRACTED"
+            android:textColor="#79747E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="6dp"
+            android:layout_marginStart="2dp"/>
+
+        <!-- Selected Message Text -->
+        <TextView
+            android:id="@+id/extracted_message_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Extracted text will appear here..."
+            android:textColor="#49454F"
+            android:textSize="13sp"
+            android:textStyle="italic"
+            android:layout_marginBottom="16dp"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:background="@drawable/context_box_bg"
+            android:padding="12dp"
+            android:lineSpacingMultiplier="1.1"/>
+
+        <!-- Suggested Responses Label -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUGGESTED RESPONSES"
+            android:textColor="#79747E"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="2dp"/>
+
+        <!-- Progress Bar for AI Loading -->
+        <ProgressBar
+            android:id="@+id/suggestions_progress"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"
+            android:indeterminateTint="#6750a4"
+            android:visibility="gone" />
+
+        <!-- Suggestions List -->
+        <LinearLayout
+            android:id="@+id/suggestions_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="12dp">
+            
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="✦  Gemini • Privacy Protected"
+                android:textColor="#79747E"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.05" />
+        </LinearLayout>
+
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,6 @@
+{
+  "name": "AI Communication Mediator",
+  "description": "A privacy-first floating assistant to help instantly de-escalate arguments or draft professional messages on any chat app.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
